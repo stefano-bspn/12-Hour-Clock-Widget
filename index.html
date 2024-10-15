@@ -1,7 +1,72 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12-Hour Clock Widget</title>
+    <style>
+        body {
+            background-color: #000;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: 'Arial', sans-serif;
+        }
+
+        .clock {
+            text-align: center;
+            color: #fff;
+        }
+
+        .time {
+            font-size: 80px;
+        }
+
+        .date {
+            font-size: 24px;
+            margin-top: 10px;
+        }
+    </style>
+</head>
 <body>
-<h1>Hello World</h1>
-<p>I'm hosted with GitHub Pages.</p>
+    <div class="clock">
+        <div id="time" class="time"></div>
+        <div id="date" class="date"></div>
+    </div>
+
+    <script>
+        function updateClock() {
+            const timeElement = document.getElementById('time');
+            const dateElement = document.getElementById('date');
+            const now = new Date();
+
+            // Format jam dalam 12-hour format
+            let hours = now.getHours();
+            const minutes = now.getMinutes();
+            const ampm = hours >= 12 ? 'PM' : 'AM';
+            hours = hours % 12;
+            hours = hours ? hours : 12; // Mengubah 0 menjadi 12
+
+            // Tambahkan angka 0 di depan jika kurang dari 10
+            const formattedTime = `${hours}:${minutes < 10 ? '0' : ''}${minutes} ${ampm}`;
+            timeElement.textContent = formattedTime;
+
+            // Format tanggal
+            const days = ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'];
+            const months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+            const day = days[now.getDay()];
+            const month = months[now.getMonth()];
+            const date = now.getDate();
+
+            const formattedDate = `${day}, ${month} ${date}`;
+            dateElement.textContent = formattedDate;
+        }
+
+        // Update clock setiap detik
+        setInterval(updateClock, 1000);
+        updateClock();
+    </script>
 </body>
 </html>
