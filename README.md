@@ -4,7 +4,7 @@
 
 A clean and simple 12-hour (AM/PM) clock widget, designed specifically to be embedded seamlessly into your Notion pages.
 
-![Clock Widget Screenshot](https://imgur.com/a/ElaI7Cf)
+![Clock Widget Screenshot](https://i.imgur.com/utiaFGw.png)
 
 ---
 
@@ -25,8 +25,6 @@ A clean and simple 12-hour (AM/PM) clock widget, designed specifically to be emb
 4.  **Paste** the copied URL into the input box.
 5.  Click **"Embed link"**.
 6.  Done! You can now resize the embed block to your liking.
-
-![Notion Embed Guide](https://i.imgur.com/rS2yS2A.png)
 
 ---
 
